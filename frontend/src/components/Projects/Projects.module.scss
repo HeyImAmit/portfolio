@@ -1,0 +1,164 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.projects {
+  position: relative;
+  width: 100%;
+  padding: $section-padding 0;
+  background-color: $color-bg;
+}
+
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 4rem;
+
+  @media (max-width: 768px) {
+    padding: 0 2rem;
+  }
+}
+
+.header {
+  margin-bottom: 5rem;
+  
+  h2 {
+    font-size: clamp(3rem, 6vw, 5rem);
+    color: $color-text;
+
+    .dot {
+      color: $color-accent;
+    }
+  }
+}
+
+.projectList {
+  display: flex;
+  flex-direction: column;
+  gap: 10vh;
+}
+
+.projectCard {
+  background: $color-bg;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2rem;
+  padding: 4rem;
+  position: sticky;
+  top: 15vh;
+  transform-origin: top center;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 -20px 40px -20px rgba(0,0,0,0.8);
+
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+    position: relative;
+    top: auto;
+    box-shadow: none;
+  }
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 2rem;
+}
+
+.number {
+  font-family: $font-secondary;
+  font-size: 2rem;
+  font-weight: 300;
+  color: $color-text-muted;
+}
+
+.links {
+  display: flex;
+  gap: 1rem;
+  
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: $color-text;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    &:hover {
+      background-color: $color-text;
+      color: $color-bg;
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      width: 48px;
+      height: 48px;
+    }
+  }
+}
+
+.cardContent {
+  h3 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    font-family: $font-primary;
+    letter-spacing: -0.02em;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    color: $color-accent;
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+}
+
+.points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+  }
+
+  li {
+    color: $color-text-muted;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 1.5rem;
+
+    &::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: $color-text;
+    }
+  }
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+
+  .tech {
+    padding: 0.5rem 1.25rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 100px;
+    font-size: 0.9rem;
+    color: $color-text;
+  }
+}

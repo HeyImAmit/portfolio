@@ -1,0 +1,122 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.about {
+  position: relative;
+  width: 100%;
+  padding: $section-padding 0;
+  background-color: $color-bg;
+  overflow: hidden;
+}
+
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 4rem;
+
+  @media (max-width: 768px) {
+    padding: 0 2rem;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 6rem;
+
+  .title {
+    font-size: clamp(3rem, 6vw, 5rem);
+    color: $color-text;
+    margin: 0;
+
+    .dot {
+      color: $color-accent;
+    }
+  }
+
+  .line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  gap: 6rem;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    gap: 4rem;
+  }
+}
+
+.textContainer {
+  flex: 3;
+  
+  .description {
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    line-height: 1.5;
+    color: $color-text;
+    font-weight: 300;
+  }
+}
+
+.wordWrapper {
+  display: inline-block;
+  overflow: hidden;
+  margin-right: 0.3em;
+  padding-bottom: 0.1em;
+}
+
+.word {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+.education {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  h3 {
+    font-size: 1.5rem;
+    color: $color-text-muted;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+.eduItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  h4 {
+    font-size: 1.2rem;
+    color: $color-text;
+  }
+
+  .institution {
+    color: #a0a0a0;
+    font-size: 0.95rem;
+  }
+
+  .meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: $color-text-muted;
+    margin-top: 0.5rem;
+
+    .score {
+      color: $color-accent;
+      font-weight: 500;
+    }
+  }
+}

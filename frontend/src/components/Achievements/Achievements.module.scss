@@ -1,0 +1,146 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.achievements {
+  position: relative;
+  width: 100%;
+  padding: $section-padding 0;
+  background-color: $color-bg;
+}
+
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 4rem;
+
+  @media (max-width: 768px) {
+    padding: 0 2rem;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 5rem;
+
+  h2 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: $color-text;
+    white-space: nowrap;
+
+    .dot {
+      color: $color-accent;
+    }
+  }
+
+  .line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+  }
+}
+
+.content {
+  display: flex;
+  gap: 6rem;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    gap: 4rem;
+  }
+}
+
+.profiles {
+  flex: 1;
+
+  h3 {
+    font-size: 1.5rem;
+    color: $color-text-muted;
+    font-weight: 400;
+    margin-bottom: 2rem;
+  }
+}
+
+.profileGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.profileCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  .platformName {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: $color-text;
+  }
+
+  .icon {
+    color: $color-text-muted;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: $color-accent;
+    transform: translateY(-5px);
+
+    .icon {
+      color: $color-accent;
+      transform: translate(2px, -2px);
+    }
+  }
+}
+
+.accolades {
+  flex: 2;
+
+  h3 {
+    font-size: 1.5rem;
+    color: $color-text-muted;
+    font-weight: 400;
+    margin-bottom: 2rem;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: linear-gradient(90deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0) 100%);
+    border-left: 2px solid rgba(255,255,255,0.1);
+    transition: border-color 0.3s ease;
+    border-radius: 0 1rem 1rem 0;
+
+    &:hover {
+      border-color: $color-accent;
+    }
+
+    span {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #e0e0e0;
+    }
+  }
+}
+
+.trophyIcon {
+  color: $color-accent;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}

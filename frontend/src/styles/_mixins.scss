@@ -1,0 +1,40 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin text-gradient($color1, $color2) {
+  background: linear-gradient(to right, $color1, $color2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 600px) { @content; }
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 900px) { @content; }
+  }
+  @if $breakpoint == tab-land {
+    @media (max-width: 1200px) { @content; }
+  }
+  @if $breakpoint == big-desktop {
+    @media (min-width: 1800px) { @content; }
+  }
+}

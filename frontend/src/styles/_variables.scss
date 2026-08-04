@@ -1,0 +1,18 @@
+$color-bg: #030303;
+$color-text: #EDEDED;
+$color-text-muted: #808080;
+$color-primary: #FFFFFF;
+$color-accent: #4F46E5; // deep indigo accent
+$border-color: rgba(255, 255, 255, 0.1);
+
+// Typography
+$font-primary: 'Inter', -apple-system, sans-serif;
+$font-secondary: 'Outfit', -apple-system, sans-serif;
+
+// Layout
+$max-width: 1440px;
+$section-padding: 8rem;
+
+// Easing
+$ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+$ease-in-out-circ: cubic-bezier(0.85, 0, 0.15, 1);
