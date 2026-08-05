@@ -27,7 +27,10 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+      <div
+        className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto overscroll-contain"
+        data-lenis-prevent
+      >
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -41,7 +44,8 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-          className="relative w-full max-w-4xl bg-[#0d0d0d] border border-white/10 rounded-3xl p-6 sm:p-8 shadow-2xl z-10 overflow-hidden my-8 max-h-[90vh] overflow-y-auto"
+          className="relative w-full max-w-4xl bg-[#0d0d0d] border border-white/10 rounded-3xl p-6 sm:p-8 shadow-2xl z-10 my-8 max-h-[85vh] overflow-y-auto overscroll-contain"
+          data-lenis-prevent
         >
           <button
             onClick={onClose}

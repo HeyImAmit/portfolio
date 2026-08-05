@@ -1,0 +1,1 @@
+const fs = require("fs"); const pdf = require("pdf-parse"); let dataBuffer = fs.readFileSync("e:\\loqFiles\\Amit Outsrc\\webDev\\MajorProj\\PortAmit\\ResumeUpdated (2).pdf"); pdf(dataBuffer).then(function(data) { console.log(data.text); });
